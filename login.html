@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema Multi-Tenant CWP</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 360px;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .login-header h2 {
+            color: #2c3e50;
+            font-size: 22px;
+        }
+        .login-header p {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 11px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+        .mural-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+        .mural-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .mural-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Acesso ao Sistema</h2>
+            <p>Laboratório Multi-Tenant e CWP</p>
+        </div>
+        
+        <form action="login" method="POST">
+            <div class="form-group">
+                <label for="empresaId">Código da Empresa (Tenant):</label>
+                <input type="number" id="empresaId" name="empresaId" placeholder="Ex: 1, 2 ou 3" required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail do Usuário:</label>
+                <input type="email" id="email" name="email" placeholder="usuario@empresa.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Entrar no Sistema</button>
+        </form>
+
+        <div class="mural-link">
+            <a href="public-noticias.html">← Ver Mural Público de Notícias</a>
+        </div>
+    </div>
+</body>
+</html>
